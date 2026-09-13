@@ -1,0 +1,15 @@
+region               = "ap-southeast-2"
+hub_profile          = "YOUR_HUB_PROFILE"
+workload_account_ids = ["REPLACE_WITH_DEV_ACCOUNT_ID", "REPLACE_WITH_PROD_ACCOUNT_ID"]
+amazon_side_asn      = 65001
+inspection_vpc_cidr  = "10.255.0.0/24"
+local_spoke_cidrs    = ["10.255.1.0/24", "10.255.2.0/24"]
+remote_spoke_cidrs   = ["10.254.1.0/24", "10.254.2.0/24"]
+
+# Teaching progression (full apply + vars — avoid terraform -target):
+#   enable_network_firewall = false   # hubs → peering → prove mesh
+#   enable_network_firewall = true
+#   firewall_rules_enabled  = false   # attach deny, observe drop
+#   firewall_rules_enabled  = true    # allow lab PASS
+enable_network_firewall = false
+firewall_rules_enabled  = false

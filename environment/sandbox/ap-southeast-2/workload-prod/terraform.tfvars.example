@@ -1,0 +1,4 @@
+region           = "ap-southeast-2"
+workload_profile = "YOUR_PROD_WORKLOAD_PROFILE"
+hub_profile      = "YOUR_HUB_PROFILE"
+spoke_vpc_cidr   = "10.255.2.0/24"

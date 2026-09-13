@@ -1,0 +1,27 @@
+name: Terraform Lint & Validate
+
+on:
+  pull_request: {}
+
+permissions:
+  statuses: write
+  checks: write
+  contents: read
+  pull-requests: read
+
+jobs:
+  terraform-lint-validate:
+    strategy:
+      fail-fast: false
+      matrix:
+        path:
+          - environment/sandbox/ap-southeast-2/hub
+          - environment/sandbox/ap-southeast-2/workload-dev
+          - environment/sandbox/ap-southeast-2/workload-prod
+          - environment/sandbox/ap-southeast-2/hub-peering
+          - environment/sandbox/ap-southeast-6/hub
+          - environment/sandbox/ap-southeast-6/workload-dev
+          - environment/sandbox/ap-southeast-6/workload-prod
+    uses: actionsforge/actions/.github/workflows/terraform-lint-validate.yml@main
+    with:
+      path: ${{ matrix.path }}
