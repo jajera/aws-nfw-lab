@@ -1,0 +1,12 @@
+syd_region       = "ap-southeast-2"
+akl_region       = "ap-southeast-6"
+syd_hub_profile  = "YOUR_HUB_PROFILE"
+akl_hub_profile  = "YOUR_HUB_PROFILE"
+syd_dev_profile  = "YOUR_DEV_WORKLOAD_PROFILE"
+akl_dev_profile  = "YOUR_DEV_WORKLOAD_PROFILE"
+syd_prod_profile = "YOUR_PROD_WORKLOAD_PROFILE"
+akl_prod_profile = "YOUR_PROD_WORKLOAD_PROFILE"
+dns_zone_name    = "lab.demo"
+
+# Flip true after both workload-prod stacks are applied
+enable_prod_workloads = false
